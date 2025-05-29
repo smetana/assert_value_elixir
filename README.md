@@ -6,8 +6,8 @@
 
   * `assert_value` allows you not to think about the correct expected values when writing
     tests
-  * Gets rid of manual tests maintenance
-  * Makes Elixir tests interactive and lets you to create and update expected values
+  * Gets rid of manual test maintenance
+  * Makes Elixir tests interactive and lets you create and update expected values
     with a single key press
   * Improves test readability
 
@@ -78,7 +78,7 @@ Add this to .formatter.exs:
 
 Tests are code. They should be readable, maintainable, and reusable.
 Tests should break when behaviour changes and should not break randomly.
-We will look at how to do this in Elixir project.
+We will look at how to do this in an Elixir project.
 
 ### Traditional Way
 
@@ -99,7 +99,7 @@ defmodule ExampleWeb.PageControllerTest do
   end
 end
 ```
-Now we want to add tests for page content. Traditional way to to it looks
+Now we want to add tests for page content. Traditional way to do it looks
 like this:
 ```elixir
 # Use Floki to parse html
@@ -135,7 +135,7 @@ Why is this bad?
   * You have a lot of code duplication when testing multiple pages
   * It makes it expensive to create new tests and even more expensive
     to update them
-  * This will hurt tests coverage and will make it more expensive to
+  * This will hurt test coverage and will make it more expensive to
     create new features or refactor code
 
 Let's fix this.
@@ -347,7 +347,7 @@ tests. Especially when your software is changing fast.
 
 ### Canonicalization
 
-A common problem with testing serialized output that it may contain unpredictable
+A common problem with testing serialized output is that it may contain unpredictable
 or changing data (like tokens, timestamps, ids, etc). The solution for this problem
 is canonicalization.
 
@@ -470,7 +470,7 @@ Put them into the file instead.
 assert_value "foo" == File.read!("test/log/reference.txt")
 ```
 assert_value is smart enough to recognize File.read! and will update file contents
-instead of test source. If file does not exists it will be created and no error
+instead of test source. If file does not exist it will be created and no error
 will be raised despite default File.read! behaviour.
 
 ### Running Tests Interactively
@@ -521,7 +521,7 @@ ASSERT_VALUE_ACCEPT_DIFFS=reformat mix test
 ## Notes and Known Issues
 
   * assert_value supports all Elixir types except not serializable (Function,
-    PID, Port, Reference). To compare values of theese types use ```inspect```
+    PID, Port, Reference). To compare values of these types use ```inspect```
     and [Serialization](#serialization) techniques.
   * assert_value's formatter is primitive and does not understand operator
     precedence. When creating a new expected value from scratch it simply
@@ -539,7 +539,7 @@ We appreciate any contribution to assert_value
 
 To file a bug report create a [GitHub issue](https://github.com/assert-value/assert_value_elixir/issues).
 
-To create a feature requests add a comment to the [Roadmap](https://github.com/assert-value/assert_value_elixir/issues/1)
+To create a feature request add a comment to the [Roadmap](https://github.com/assert-value/assert_value_elixir/issues/1)
 
 To make a pull request:
 
